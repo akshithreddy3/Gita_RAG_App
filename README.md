@@ -35,16 +35,18 @@ Everything runs locally — **no cloud APIs or data leaks**.
 
 ## 🏗️ Project Structure
 
+```bash
 rag_gita/
-├── app.py # Streamlit chat interface
-├── ingest.py # PDF loader → chunking → embeddings → Chroma
-├── rag_chain.py # Retriever + LLM chain setup
-├── prompts.py # System + human prompt templates
-├── utils.py # Helper functions
-├── requirements.txt # Dependencies
-├── .env # Config (paths, models, retrieval params)
+├── app.py               # Streamlit chat interface
+├── ingest.py            # PDF loader → chunking → embeddings → Chroma
+├── rag_chain.py         # Retriever + LLM chain setup
+├── prompts.py           # System + human prompt templates
+├── utils.py             # Helper functions
+├── requirements.txt     # Dependencies
+├── .env                 # Config (paths, models, retrieval params)
 └── data/
-└── bhagavad_gita.pdf
+    └── bhagavad_gita.pdf
+```
 
 
 ---
@@ -56,20 +58,20 @@ rag_gita/
 git clone https://github.com/<your-username>/Gita_RAG_App.git
 cd Gita_RAG_App
 
-2️⃣ Create and activate a virtual environment
+### 2️⃣ Create and activate a virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-3️⃣ Install dependencies
+### 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Install & run Ollama
+### 4️⃣ Install & run Ollama
 brew install ollama
 ollama serve     # keep this terminal open
 ollama pull mistral:7b
 # or: ollama pull llama3.1:8b
 
-5️⃣ Configure environment variables (.env)
+### 5️⃣ Configure environment variables (.env)
 DOCS_DIR=./data
 CHROMA_DIR=./chroma
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
@@ -80,16 +82,16 @@ TOP_K=4
 MMR=true
 SCORE_THRESHOLD=0.0
 
-6️⃣ Ingest your PDF
+### 6️⃣ Ingest your PDF
 python ingest.py
 
-7️⃣ Launch the app
+### 7️⃣ Launch the app
 python -m streamlit run app.py
 
 Then open the local URL (usually http://localhost:8501).
 
 
-💬 Example Queries
+## 💬 Example Queries
 “What does the Gita say about doing one’s duty without attachment?”
 
 “How can one control the mind and emotions?”
@@ -101,7 +103,7 @@ Then open the local URL (usually http://localhost:8501).
 “Explain the meaning of renunciation.”
 
 
-🧩 Key Features
+## 🧩 Key Features
 ✅ Completely Local – No cloud API or key required
 ✅ Grounded Answers – Responses only from your PDF context
 ✅ Customizable Models – Swap between mistral:7b, llama3:8b, or phi3:3.8b
@@ -109,7 +111,7 @@ Then open the local URL (usually http://localhost:8501).
 ✅ Beautiful UI – Streamlit chat with expandable source citations
 
 
-🧰 Troubleshooting
+## 🧰 Troubleshooting
 | Issue                       | Solution                                                   |
 | --------------------------- | ---------------------------------------------------------- |
 | `httpx.RemoteProtocolError` | Restart `ollama serve` or use smaller model (`mistral:7b`) |
@@ -118,8 +120,7 @@ Then open the local URL (usually http://localhost:8501).
 | Scanned PDF (image-only)    | Add OCR with `pytesseract` or `unstructured` loader        |
 
 
-
-🚀 Future Enhancements
+## 🚀 Future Enhancements
 | Feature                      | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
 | 🧠 **Conversational Memory** | Remember previous Q&As using `ConversationBufferMemory` |
@@ -129,12 +130,12 @@ Then open the local URL (usually http://localhost:8501).
 | ☁️ **Gemini/OpenAI Support** | Add toggle for cloud LLMs in `.env`                     |
 
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 Akshith Reddy K
 📍 Data Analyst / Data Engineer / AI-Enabled BI Professional
 🔗 LinkedIn • GitHub
 
 
-🪪 License
+## 🪪 License
 MIT License © 2025 Akshith Reddy K
 Feel free to use, modify, and distribute with attribution.
