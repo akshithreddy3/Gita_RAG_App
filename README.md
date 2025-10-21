@@ -46,8 +46,6 @@ rag_gita/
 └── data/
 └── bhagavad_gita.pdf
 
-yaml
-Copy code
 
 ---
 
