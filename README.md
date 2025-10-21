@@ -57,21 +57,29 @@ rag_gita/
 ```bash
 git clone https://github.com/<your-username>/Gita_RAG_App.git
 cd Gita_RAG_App
+```
 
 ### 2️⃣ Create and activate a virtual environment
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 ### 3️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 4️⃣ Install & run Ollama
+```bash
 brew install ollama
 ollama serve     # keep this terminal open
 ollama pull mistral:7b
 # or: ollama pull llama3.1:8b
+```
 
 ### 5️⃣ Configure environment variables (.env)
+```env
 DOCS_DIR=./data
 CHROMA_DIR=./chroma
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
@@ -81,14 +89,21 @@ CHUNK_OVERLAP=150
 TOP_K=4
 MMR=true
 SCORE_THRESHOLD=0.0
+```
 
 ### 6️⃣ Ingest your PDF
+```bash
 python ingest.py
+```
 
 ### 7️⃣ Launch the app
+```bash
 python -m streamlit run app.py
+```
 
 Then open the local URL (usually http://localhost:8501).
+
+---
 
 
 ## 💬 Example Queries
@@ -102,6 +117,7 @@ Then open the local URL (usually http://localhost:8501).
 
 “Explain the meaning of renunciation.”
 
+---
 
 ## 🧩 Key Features
 ✅ Completely Local – No cloud API or key required
@@ -110,6 +126,7 @@ Then open the local URL (usually http://localhost:8501).
 ✅ Fast Retrieval – Optimized chunking & MMR search via Chroma
 ✅ Beautiful UI – Streamlit chat with expandable source citations
 
+---
 
 ## 🧰 Troubleshooting
 | Issue                       | Solution                                                   |
@@ -119,6 +136,7 @@ Then open the local URL (usually http://localhost:8501).
 | Duplicate embeddings        | Delete `/chroma` and re-run `python ingest.py`             |
 | Scanned PDF (image-only)    | Add OCR with `pytesseract` or `unstructured` loader        |
 
+---
 
 ## 🚀 Future Enhancements
 | Feature                      | Description                                             |
@@ -129,13 +147,18 @@ Then open the local URL (usually http://localhost:8501).
 | 🔍 **Multi-Book Support**    | Drop multiple PDFs → unified knowledge base             |
 | ☁️ **Gemini/OpenAI Support** | Add toggle for cloud LLMs in `.env`                     |
 
+---
 
 ## 🧑‍💻 Author
 Akshith Reddy K
 📍 Data Analyst / Data Engineer / AI-Enabled BI Professional
 🔗 LinkedIn • GitHub
 
+---
+
 
 ## 🪪 License
 MIT License © 2025 Akshith Reddy K
 Feel free to use, modify, and distribute with attribution.
+
+---
