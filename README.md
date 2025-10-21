@@ -105,6 +105,13 @@ Then open the local URL (usually http://localhost:8501).
 
 ---
 
+## 📸 Demo Preview
+
+Here’s a quick look at the app in action 👇
+
+![App Screenshot](https://github.com/akshithreddy3/Gita_RAG_App/blob/main/preview.png)
+
+---
 
 ## 💬 Example Queries
 “What does the Gita say about doing one’s duty without attachment?”
