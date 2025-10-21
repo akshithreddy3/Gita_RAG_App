@@ -55,25 +55,21 @@ rag_gita/
 ```bash
 git clone https://github.com/<your-username>/Gita_RAG_App.git
 cd Gita_RAG_App
+
 2️⃣ Create and activate a virtual environment
-bash
-Copy code
 python3 -m venv .venv
 source .venv/bin/activate
+
 3️⃣ Install dependencies
-bash
-Copy code
 pip install -r requirements.txt
+
 4️⃣ Install & run Ollama
-bash
-Copy code
 brew install ollama
 ollama serve     # keep this terminal open
 ollama pull mistral:7b
 # or: ollama pull llama3.1:8b
+
 5️⃣ Configure environment variables (.env)
-env
-Copy code
 DOCS_DIR=./data
 CHROMA_DIR=./chroma
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
@@ -83,15 +79,15 @@ CHUNK_OVERLAP=150
 TOP_K=4
 MMR=true
 SCORE_THRESHOLD=0.0
+
 6️⃣ Ingest your PDF
-bash
-Copy code
 python ingest.py
+
 7️⃣ Launch the app
-bash
-Copy code
 python -m streamlit run app.py
+
 Then open the local URL (usually http://localhost:8501).
+
 
 💬 Example Queries
 “What does the Gita say about doing one’s duty without attachment?”
@@ -104,6 +100,7 @@ Then open the local URL (usually http://localhost:8501).
 
 “Explain the meaning of renunciation.”
 
+
 🧩 Key Features
 ✅ Completely Local – No cloud API or key required
 ✅ Grounded Answers – Responses only from your PDF context
@@ -111,25 +108,32 @@ Then open the local URL (usually http://localhost:8501).
 ✅ Fast Retrieval – Optimized chunking & MMR search via Chroma
 ✅ Beautiful UI – Streamlit chat with expandable source citations
 
+
 🧰 Troubleshooting
-Issue	Solution
-httpx.RemoteProtocolError	Restart ollama serve or use smaller model (mistral:7b)
-Model loading slow	Set num_ctx=2048, streaming=False in rag_chain.py
-Duplicate embeddings	Delete /chroma and re-run python ingest.py
-Scanned PDF (image-only)	Add OCR with pytesseract or unstructured loader
+| Issue                       | Solution                                                   |
+| --------------------------- | ---------------------------------------------------------- |
+| `httpx.RemoteProtocolError` | Restart `ollama serve` or use smaller model (`mistral:7b`) |
+| Model loading slow          | Set `num_ctx=2048`, `streaming=False` in `rag_chain.py`    |
+| Duplicate embeddings        | Delete `/chroma` and re-run `python ingest.py`             |
+| Scanned PDF (image-only)    | Add OCR with `pytesseract` or `unstructured` loader        |
+
+
 
 🚀 Future Enhancements
-Feature	Description
-🧠 Conversational Memory	Remember previous Q&As using ConversationBufferMemory
-📚 Verse Citations	Auto-detect and display “Chapter:Verse” references
-💬 Voice Input / Output	Integrate speech_recognition + gTTS
-🔍 Multi-Book Support	Drop multiple PDFs → unified knowledge base
-☁️ Gemini/OpenAI Support	Add toggle for cloud LLMs in .env
+| Feature                      | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| 🧠 **Conversational Memory** | Remember previous Q&As using `ConversationBufferMemory` |
+| 📚 **Verse Citations**       | Auto-detect and display “Chapter:Verse” references      |
+| 💬 **Voice Input / Output**  | Integrate `speech_recognition` + `gTTS`                 |
+| 🔍 **Multi-Book Support**    | Drop multiple PDFs → unified knowledge base             |
+| ☁️ **Gemini/OpenAI Support** | Add toggle for cloud LLMs in `.env`                     |
+
 
 🧑‍💻 Author
 Akshith Reddy K
 📍 Data Analyst / Data Engineer / AI-Enabled BI Professional
 🔗 LinkedIn • GitHub
+
 
 🪪 License
 MIT License © 2025 Akshith Reddy K
