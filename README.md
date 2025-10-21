@@ -120,15 +120,17 @@ Then open the local URL (usually http://localhost:8501).
 ---
 
 ## 🧩 Key Features
-✅ Completely Local – No cloud API or key required
-✅ Grounded Answers – Responses only from your PDF context
-✅ Customizable Models – Swap between mistral:7b, llama3:8b, or phi3:3.8b
-✅ Fast Retrieval – Optimized chunking & MMR search via Chroma
-✅ Beautiful UI – Streamlit chat with expandable source citations
+
+- ✅ **Completely Local** – No cloud API or key required  
+- ✅ **Grounded Answers** – Responses only from your PDF context  
+- ✅ **Customizable Models** – Swap between `mistral:7b`, `llama3:8b`, or `phi3:3.8b`  
+- ✅ **Fast Retrieval** – Optimized chunking & MMR search via Chroma  
+- ✅ **Beautiful UI** – Streamlit chat with expandable source citations  
 
 ---
 
 ## 🧰 Troubleshooting
+
 | Issue                       | Solution                                                   |
 | --------------------------- | ---------------------------------------------------------- |
 | `httpx.RemoteProtocolError` | Restart `ollama serve` or use smaller model (`mistral:7b`) |
@@ -139,6 +141,7 @@ Then open the local URL (usually http://localhost:8501).
 ---
 
 ## 🚀 Future Enhancements
+
 | Feature                      | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
 | 🧠 **Conversational Memory** | Remember previous Q&As using `ConversationBufferMemory` |
